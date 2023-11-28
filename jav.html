@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<style>
+  .container{
+    width: 400px;
+    background-color: black;
+  }
+
+  #display{
+    width: 400px;
+    height: 30px;
+    color: white;
+    background-color: blue;
+  }
+
+  #view
+  {
+    width: 400px;
+    height: 30px;
+    background-color: red;
+    color: white;
+  }
+
+  img{
+    width: 100%;
+  }
+
+
+
+  @keyframes power{
+    from{
+      transform: translateX(200px);
+
+    }
+
+    to{
+      transform: translateY(100px);
+    }
+  }
+</style>
+
+
+
+
+  <input type="text" id="letgo">
+  <button onclick="nice()">click here</button>
+  <div class="container">
+    <img src="image/laptop.png" alt="">
+    <p id="display"></p>
+    <button onclick="orderbtn()">ordernow</button>
+    <p id="view"></p>
+
+     
+
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button id="boton" onclick="resetboton()">reset</button>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    let view=0;
+    const input=document.getElementById('letgo');
+    const photo=document.getElementById('display');
+    const cart=document.getElementById('view');
+    const boton=document.getElementById('boton')
+
+
+    function nice(){
+    display.innerHTML=letgo.value;
+    }
+
+
+    function orderbtn(){
+      view=view+1;
+      totalcost=display.innerHTML;
+      cart.innerHTML=`you have added ${view}, and it cost ${totalcost}`;
+
+
+
+    }
+
+
+    function resetboton(){
+     const photo=letgo.value;
+      view=0;
+      totalcost=view;
+      const boton=document.getElementById('boton');
+      boton.style.backgroundColor='red';
+      boton.textContent='clicked';
+      // boton.style.animinatio='power 2s infinite'
+
+      // console.log(boton.style.animinatio='power 2s infinite');
+      cart.innerHTML=`you have added ${view}, and it cost ${totalcost}`;
+      // cart.innerHTML=photo.value;
+    }
+  </script>
+</body>
+</html>

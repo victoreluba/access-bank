@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<style>
+  .container{
+    width: 200px;
+    background-color: black;
+
+  }
+
+  #view{
+    width: 100px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+  }
+
+
+
+  #cart{
+    width: 150px;
+    height: 30px;
+    background-color: red;
+  }
+
+
+</style>
+
+
+  <input type="text" id="content">
+  <button onclick="buybtn()">buynow</button>
+
+  <div class="container">
+    <img src="image/accesslogo.png" alt="">
+    <p id="view"></p>
+    <button onclick="orderbtn()">order</button>
+    <p id="cart"></p>
+
+
+
+
+
+    <button onclick="plus1()">1</button>
+    <button onclick="plus2()">2</button>
+    <button onclick="plus3()">3</button>
+    <button onclick="plus4()">4</button>
+    <button onclick="resetbtn()">reset</button>
+
+  </div>
+
+
+
+
+
+
+  <script>
+    let cart=0;
+    const content=document.getElementById('content');
+    const view=document.getElementById('view');
+    const payroll=document.getElementById('cart') 
+
+
+
+    function buybtn(){
+      view.innerHTML=content.value;
+    }
+
+
+    function orderbtn(){
+       cart=cart+1;
+      tp=view.innerHTML;
+      payroll.innerHTML=`you have ordered ${cart} , and it cost ${tp}`
+    }
+
+    function plus1(){
+      cart=cart+1;
+      tp=view.innerHTML;
+      payroll.innerHTML=`you have ordered ${cart} , and it cost ${tp}`
+
+    }
+    function plus2(){
+       
+      cart=cart+2;
+      tp=view.innerHTML;
+      payroll.innerHTML=`you have ordered ${cart} , and it cost ${tp}`
+
+    }
+    function plus3(){
+      cart=cart+3;
+      tp=view.innerHTML;
+      payroll.innerHTML=`you have ordered ${cart} , and it cost ${tp}`
+
+    }
+
+    function resetbtn(){
+  cart=0;
+  payroll.innerHTML=cart;
+    }
+  </script>
+</body>
+</html>

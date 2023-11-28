@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <style>
+  #cart{
+   background-color: red;
+   color: white;
+   font-size: 40px;
+  }
+
+
+  .box{
+   width: 200px;
+   height: 300px;
+   background-color: black;
+   border-radius: 12px;
+  }
+
+  img{
+   width: 100%;
+  }
+
+  .box p{
+   font-size:10px;
+   color: white;
+  }
+ </style>
+
+ <!-- end of style -->
+ 
+ <input type="text" placeholder="Enter the price of the" id="pricebox">
+ <button onclick="submitprice()">Submit</button>
+
+ <div class="container">
+
+<div class="box">
+ <img src="image/laptop.png" alt="">
+ <p id="price"></p>
+ <button onclick="buynow()">Buy Now</button>
+</div>
+
+
+ </div>
+
+
+
+
+
+<button onclick="plus1()">1</button>
+<button onclick="plus2()">2</button>
+<button onclick="console.log(cart=cart+2)">2</button>
+<button onclick="reset()">RESET</button>
+<p id="cart">Empty Cart</p>
+<button>reset</button>
+
+<!-- script begins here -->
+<script>
+ let cart = 0;
+ const cartbasket = document.getElementById('cart');
+ // cartbasket.textContent=cart;
+ pricebox = document.getElementById('pricebox');
+ price = document.getElementById('price');
+ 
+
+
+
+function submitprice(){
+ price.innerHTML = pricebox.value;
+}
+
+
+function plus1(){
+ cart = cart + 1;
+ tp=price.innerHTML;
+ cartbasket.innerHTML=`You have added ${cart} products to the cart, with a price of ${tp}`;
+}
+function plus2(){
+ cart = cart + 2;
+ tp=price.innerHTML;
+ cartbasket.innerHTML=`You have added ${cart} products to the cart, with a price of ${tp}`;
+}
+
+function reset(){
+ cart = 0;
+ cartbasket.innerHTML=cart;
+}
+
+function buynow(){
+ cart = cart + 1;
+ tp=price.innerHTML;
+ cartbasket.innerHTML=`You have added ${cart} products to the cart, with a price of ${tp}`;
+}
+
+</script>
+
+
+
+
+ 
+</body>
+</html>
